@@ -1,4 +1,4 @@
-package thachpham.hometest;
+package thachpham.hometest.util;
 
 import android.util.Log;
 

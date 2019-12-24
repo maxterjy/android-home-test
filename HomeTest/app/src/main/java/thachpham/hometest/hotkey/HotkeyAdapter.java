@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import thachpham.hometest.databinding.ViewholderHotkeyBinding;
+import thachpham.hometest.util.TextFormatter;
 
 public class HotkeyAdapter extends RecyclerView.Adapter<HotkeyAdapter.HotkeyViewHolder> {
     int mColor[] =  {0xFF005956, 0xFF906D20, 0xFF006A9D, 0xFFA05819, 0xFF91271A,
@@ -27,36 +28,10 @@ public class HotkeyAdapter extends RecyclerView.Adapter<HotkeyAdapter.HotkeyView
 
         int size = hotkeys.size();
         for(int i = 0; i < size; i++) {
-            formattedList.add(getFormattedHotkey((hotkeys.get(i))));
+            formattedList.add(TextFormatter.getTwoLineFormat((hotkeys.get(i))));
         }
 
         return formattedList;
-    }
-
-    String getFormattedHotkey(String key) {
-        int len = key.length();
-        int left = (len-1)/2, right = len/2;
-        int dividePos = 0;
-
-        for(; left >= 0 && right < len; left--, right++) {
-            if (key.charAt(right) == ' ') {
-                dividePos = right;
-                break;
-            } else if (key.charAt(left) == ' ') {
-                dividePos = left;
-                break;
-            }
-        }
-
-        String formattedkey;
-        if (dividePos != 0) {
-            formattedkey = key.substring(0, dividePos) + "\n" + key.substring(dividePos+1);
-        }
-        else {
-            formattedkey = key;
-        }
-
-        return formattedkey;
     }
 
     @NonNull

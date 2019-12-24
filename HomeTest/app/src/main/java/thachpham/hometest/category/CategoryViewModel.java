@@ -1,4 +1,4 @@
-package thachpham.hometest.hotkey;
+package thachpham.hometest.category;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -13,32 +13,34 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import thachpham.hometest.util.DLog;
 import thachpham.hometest.MyApplication;
+import thachpham.hometest.util.TextFormatter;
 
-public class HotkeyViewModel extends ViewModel {
+public class CategoryViewModel extends ViewModel {
+    private MutableLiveData<List<CategoryItem>> mCategories = null;
 
-    private MutableLiveData<List<String>> mHotKeys = null;
+    public LiveData<List<CategoryItem>> getCategories() {
+        if (mCategories == null) {
+            mCategories = new MutableLiveData<List<CategoryItem>>();
 
-    public LiveData<List<String>> getHotKeys() {
-        if (mHotKeys == null) {
-            mHotKeys = new MutableLiveData<List<String>>();
-
-            fetchHotkeys();
+            fetchCategories();
         }
 
-        return mHotKeys;
+        return mCategories;
     }
 
-    private void fetchHotkeys() {
-        final List<String> wordlist = new ArrayList<String>();
+    private void fetchCategories() {
+        final List<CategoryItem> list = new ArrayList<CategoryItem>();
 
         RequestQueue queue = Volley.newRequestQueue(MyApplication.getAppContext());
-        String url = "https://raw.githubusercontent.com/tikivn/android-home-test/v2/keywords.json";
+        String url = "https://raw.githubusercontent.com/maxterjy/android-home-test/master/online-data/category.json";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -48,16 +50,21 @@ public class HotkeyViewModel extends ViewModel {
                             JSONArray jsonArr = new JSONArray(response);
 
                             for(int i = 0; i < jsonArr.length(); ++i) {
-                                String word = jsonArr.getString(i);
-                                wordlist.add(word);
+                                JSONObject obj = jsonArr.getJSONObject(i);
+                                String title = obj.getString("title");
+                                String imageUrl = obj.getString("image");
+
+                                String formattedTitle = TextFormatter.getTwoLineFormat(title);
+
+                                list.add(new CategoryItem(formattedTitle, imageUrl));
                             }
 
                         } catch (JSONException e) {
-                            DLog.print("fetchHotkeys parse, exception: " + e);
+                            DLog.print("fetchCategories parse, exception: " + e);
                             e.printStackTrace();
                         }
 
-                        mHotKeys.setValue(wordlist);
+                        mCategories.setValue(list);
                     }
                 },
                 new Response.ErrorListener() {
@@ -70,5 +77,4 @@ public class HotkeyViewModel extends ViewModel {
 
         queue.add(stringRequest);
     }
-
 }

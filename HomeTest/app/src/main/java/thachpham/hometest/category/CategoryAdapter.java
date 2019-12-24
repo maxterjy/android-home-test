@@ -7,11 +7,18 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import thachpham.hometest.databinding.ViewholderCategoryBinding;
 import thachpham.hometest.databinding.ViewholderHotkeyBinding;
 import thachpham.hometest.hotkey.HotkeyAdapter;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
+    List<CategoryItem> mItems;
+
+    public CategoryAdapter(List<CategoryItem> categoryItems) {
+        mItems = categoryItems;
+    }
 
     @NonNull
     @Override
@@ -25,17 +32,21 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
-
+        holder.mBinding.tvCategoryTitle.setText(mItems.get(position).getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return 20;
+        return mItems.size();
     }
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
+        ViewholderCategoryBinding mBinding;
+
         public CategoryViewHolder(@NonNull ViewholderCategoryBinding binding) {
             super(binding.getRoot());
+
+            mBinding = binding;
         }
     }
 }

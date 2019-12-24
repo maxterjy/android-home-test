@@ -32,6 +32,12 @@ public class HotkeyFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(HotkeyViewModel.class);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        mBinding = FragmentHotkeyBinding.inflate(inflater, container, false);
 
         mViewModel.getHotKeys().observe(this, new Observer<List<String>>() {
             @Override
@@ -45,12 +51,6 @@ public class HotkeyFragment extends Fragment {
                 mBinding.recyclerviewHotkeys.setAdapter(adapter);
             }
         });
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_hotkey, container, false);
 
         return mBinding.getRoot();
     }

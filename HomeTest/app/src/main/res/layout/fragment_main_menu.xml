@@ -11,12 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".mainmenu.MainMenuFragment">
+        tools:context=".mainmenu.MainMenuFragment"
+        android:layout_marginTop="8dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/title_hotkey" />
+            android:text="@string/title_hotkey"
+            android:textSize="18dp"
+            android:layout_marginLeft="8dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_hotkeys"

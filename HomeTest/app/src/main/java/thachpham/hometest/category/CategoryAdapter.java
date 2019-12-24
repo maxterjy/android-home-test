@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import thachpham.hometest.databinding.ViewholderCategoryBinding;
@@ -33,6 +35,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         holder.mBinding.tvCategoryTitle.setText(mItems.get(position).getTitle());
+        Glide.with(holder.itemView)
+                .load(mItems.get(position).getImageUrl())
+                .into(holder.mBinding.iconCategory);
     }
 
     @Override

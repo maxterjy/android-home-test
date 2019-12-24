@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
+import thachpham.hometest.DLog;
 import thachpham.hometest.R;
 import thachpham.hometest.viewmodel.MainMenuViewModel;
 
@@ -35,7 +36,10 @@ public class MainMenuFragment extends Fragment {
         mViewModel.getHotKeys().observe(this, new Observer<List<String>>() {
             @Override
             public void onChanged(List<String> hotkeys) {
-                Log.i("kkk", "onChanged");
+                DLog.print("onChanged " + hotkeys.size());
+                for(int i = 0; i < hotkeys.size(); ++i) {
+                    DLog.print("ui key: " + hotkeys.get(i));
+                }
             }
         });
     }

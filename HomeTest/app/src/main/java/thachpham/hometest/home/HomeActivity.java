@@ -1,4 +1,4 @@
-package thachpham.hometest;
+package thachpham.hometest.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -6,9 +6,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import thachpham.hometest.mainmenu.MainMenuFragment;
+import thachpham.hometest.R;
+import thachpham.hometest.hotkey.HotkeyFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fm.beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, new MainMenuFragment());
+        fragmentTransaction.replace(R.id.fragment_container, new HotkeyFragment());
         fragmentTransaction.commit();
     }
 }

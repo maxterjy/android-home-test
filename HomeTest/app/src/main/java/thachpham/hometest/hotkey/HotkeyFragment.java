@@ -1,4 +1,4 @@
-package thachpham.hometest.mainmenu;
+package thachpham.hometest.hotkey;
 
 
 import android.os.Bundle;
@@ -17,21 +17,21 @@ import java.util.List;
 
 import thachpham.hometest.DLog;
 import thachpham.hometest.R;
-import thachpham.hometest.databinding.FragmentMainMenuBinding;
+import thachpham.hometest.databinding.FragmentHotkeyBinding;
 
-public class MainMenuFragment extends Fragment {
+public class HotkeyFragment extends Fragment {
 
-    MainMenuViewModel mViewModel;
-    FragmentMainMenuBinding mBinding;
+    HotkeyViewModel mViewModel;
+    FragmentHotkeyBinding mBinding;
 
-    public MainMenuFragment() {
+    public HotkeyFragment() {
 
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(MainMenuViewModel.class);
+        mViewModel = ViewModelProviders.of(this).get(HotkeyViewModel.class);
 
         mViewModel.getHotKeys().observe(this, new Observer<List<String>>() {
             @Override
@@ -50,7 +50,7 @@ public class MainMenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_main_menu, container, false);
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_hotkey, container, false);
 
         return mBinding.getRoot();
     }

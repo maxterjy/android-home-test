@@ -1,9 +1,6 @@
-package thachpham.hometest.mainmenu;
+package thachpham.hometest.hotkey;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -12,10 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-import thachpham.hometest.DLog;
-import thachpham.hometest.databinding.ItemHotkeyBinding;
+import thachpham.hometest.databinding.ViewholderHotkeyBinding;
 
-public class HotkeyAdapter extends RecyclerView.Adapter<HotkeyAdapter.ItemViewHolder> {
+public class HotkeyAdapter extends RecyclerView.Adapter<HotkeyAdapter.HotkeyViewHolder> {
     int mColor[] =  {0xFF005956, 0xFF906D20, 0xFF006A9D, 0xFFA05819, 0xFF91271A,
                     0xFF8F261A, 0xFF00316F, 0xFF196E33, 0xFF005B57, 0xFFAA6C1F,
                     0xFF946D20, 0xFF590674, 0xFF00718B, 0xFF995116, 0xFF91262E };
@@ -39,9 +35,10 @@ public class HotkeyAdapter extends RecyclerView.Adapter<HotkeyAdapter.ItemViewHo
 
     String getFormattedHotkey(String key) {
         int len = key.length();
+        int left = (len-1)/2, right = len/2;
         int dividePos = 0;
 
-        for(int left = (len-1)/2, right = len/2; left >= 0 && right < len; left--, right++) {
+        for(; left >= 0 && right < len; left--, right++) {
             if (key.charAt(right) == ' ') {
                 dividePos = right;
                 break;
@@ -64,16 +61,16 @@ public class HotkeyAdapter extends RecyclerView.Adapter<HotkeyAdapter.ItemViewHo
 
     @NonNull
     @Override
-    public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public HotkeyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        ItemHotkeyBinding itemBinding = ItemHotkeyBinding.inflate(inflater, parent, false);
+        ViewholderHotkeyBinding itemBinding = ViewholderHotkeyBinding.inflate(inflater, parent, false);
 
-        ItemViewHolder holder = new ItemViewHolder(itemBinding);
+        HotkeyViewHolder holder = new HotkeyViewHolder(itemBinding);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull HotkeyViewHolder holder, int position) {
         holder.mBinding.tvKey.setText(mHotkeys.get(position));
         holder.mBinding.container.setCardBackgroundColor(mColor[position % mColor.length]);
     }
@@ -83,10 +80,10 @@ public class HotkeyAdapter extends RecyclerView.Adapter<HotkeyAdapter.ItemViewHo
         return mHotkeys.size();
     }
 
-    public class ItemViewHolder extends RecyclerView.ViewHolder {
-        ItemHotkeyBinding mBinding;
+    public class HotkeyViewHolder extends RecyclerView.ViewHolder {
+        ViewholderHotkeyBinding mBinding;
 
-        public ItemViewHolder(@NonNull ItemHotkeyBinding binding) {
+        public HotkeyViewHolder(@NonNull ViewholderHotkeyBinding binding) {
             super(binding.getRoot());
             mBinding = binding;
         }

@@ -1,4 +1,4 @@
-package thachpham.hometest.mainmenu;
+package thachpham.hometest.hotkey;
 
 import android.util.Log;
 
@@ -22,7 +22,7 @@ import java.util.List;
 import thachpham.hometest.DLog;
 import thachpham.hometest.MyApplication;
 
-public class MainMenuViewModel extends ViewModel {
+public class HotkeyViewModel extends ViewModel {
 
     private MutableLiveData<List<String>> mHotKeys = null;
 

@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
-import thachpham.hometest.fragment.MainMenuFragment;
+import thachpham.hometest.mainmenu.MainMenuFragment;
 
 public class MainActivity extends AppCompatActivity {
 

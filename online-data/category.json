@@ -1,68 +1,68 @@
-{
-  "category": [
-    {
-      "title": "Đồ chơi - Mẹ & Bé",
-      "image": "",   
-    },
-    {
-      "title": "Điện Thoại - Máy Tính Bảng",
-      "image": "",   
-    },
-    {
-      "title": "Làm Đẹp - Sức Khỏe",
-      "image": "",   
-    },
-    {
-      "title": "Điện Gia Dụng",
-      "image": "",   
-    },
-    {
-      "title": "Thời Trang",
-      "image": "",   
-    },
-    {
-      "title": "Điện Tử - Điện Lạnh",
-      "image": "",   
-    },
-    {
-      "title": " Nhà Cửa - Đời Sống",
-      "image": "",   
-    },
-    {
-      "title": "Hàng Quốc Tế",
-      "image": "",   
-    },
-    {
-      "title": "Bách Hóa Online",
-      "image": "",   
-    },
-    {
-      "title": "Thiết Bị Số- Phụ Kiện Số",
-      "image": "",   
-    },
-    {
-      "title": "Voucher - Dịch Vụ",
-      "image": "",   
-    },
-    {
-      "title": "Ô tô - Xe Máy - Xe Đạp",
-      "image": "",   
-    },
-    {
-      "title": "Nhà Sách Tiki",
-      "image": "",   
-    },
-    {
-      "title": "Laptop - Máy Vi Tính - Linh Kiện",
-      "image": "",   
-    },
-    {
-      "title": "Thể Thao - Dã Ngoại",
-      "image": "",   
-    },
-    {
-      "title": "Máy Ảnh - Máy Quay Phim",
-      "image": "",   
-    },
-  ]
-}
+
+[
+  {
+    "title": "Đồ chơi - Mẹ & Bé",
+    "image": ""   
+  },
+  {
+    "title": "Điện Thoại - Máy Tính Bảng",
+    "image": ""  
+  },
+  {
+    "title": "Làm Đẹp - Sức Khỏe",
+    "image": ""   
+  },
+  {
+    "title": "Điện Gia Dụng",
+    "image": ""   
+  },
+  {
+    "title": "Thời Trang",
+    "image": "" 
+  },
+  {
+    "title": "Điện Tử - Điện Lạnh",
+    "image": ""
+  },
+  {
+    "title": " Nhà Cửa - Đời Sống",
+    "image": ""
+  },
+  {
+    "title": "Hàng Quốc Tế",
+    "image": ""
+  },
+  {
+    "title": "Bách Hóa Online",
+    "image": ""
+  },
+  {
+    "title": "Thiết Bị Số- Phụ Kiện Số",
+    "image": ""
+  },
+  {
+    "title": "Voucher - Dịch Vụ",
+    "image": ""
+  },
+  {
+    "title": "Ô tô - Xe Máy - Xe Đạp",
+    "image": ""
+  },
+  {
+    "title": "Nhà Sách Tiki",
+    "image": ""
+  },
+  {
+    "title": "Laptop - Máy Vi Tính - Linh Kiện",
+    "image": ""
+  },
+  {
+    "title": "Thể Thao - Dã Ngoại",
+    "image": ""
+  },
+  {
+    "title": "Máy Ảnh - Máy Quay Phim",
+    "image": ""
+  }
+]
+

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import thachpham.hometest.DLog;
@@ -18,7 +19,44 @@ public class HotkeyAdapter extends RecyclerView.Adapter<HotkeyAdapter.ItemViewHo
     List<String> mHotkeys;
 
     public HotkeyAdapter(List<String> hotkeys) {
-        mHotkeys = hotkeys;
+        mHotkeys = getFormattedHotkeys(hotkeys);
+    }
+
+    List<String> getFormattedHotkeys(List<String> hotkeys) {
+        ArrayList<String> formattedList = new ArrayList<>();
+
+        int size = hotkeys.size();
+        for(int i = 0; i < size; i++) {
+            formattedList.add(getDisplayFormat((hotkeys.get(i))));
+        }
+
+        return formattedList;
+    }
+
+    String getDisplayFormat(String key) {
+        int len = key.length();
+        int left = (len-1)/2, right = len/2;
+        int dividePos = 0;
+
+        for(; left >= 0 && right < len; left--, right++) {
+            if (key.charAt(right) == ' ') {
+                dividePos = right;
+                break;
+            } else if (key.charAt(left) == ' ') {
+                dividePos = left;
+                break;
+            }
+        }
+
+        String formattedkey;
+        if (dividePos != 0) {
+            formattedkey = key.substring(0, dividePos) + "\n" + key.substring(dividePos+1);
+        }
+        else {
+            formattedkey = key;
+        }
+
+        return formattedkey;
     }
 
     @NonNull

@@ -15,7 +15,8 @@ I have built an Android application, that:
 * During doing the exam, I have used some icons of TIKI. So sorry, because I used without asking you.  
 
 You can find the apk at [here](https://github.com/maxterjy/android-home-test/blob/master/apk/HomeTest_v1.apk).  
-There are still errors and need-to-improve points int my application. But I hope you accept it.  
+There are still errors and need-to-improve points int my application.  
+But I hope the company likes it.  
 
 ## Development
 * Volley library is used to perform HTTP GET request and receive response.  

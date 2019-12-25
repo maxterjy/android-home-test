@@ -6,8 +6,8 @@ The assignment is really challenging and interesting. It help me to learn new kn
 And below is my result.  
   
 I have built an Android application, that:  
-* Fetch and display json data on the link that you give.  
-* The home screen can update together with the changes of below data:  
+* Fetch and display json data on the [link](https://raw.githubusercontent.com/tikivn/android-home-test/v2/keywords.json) that you give.  
+* Home screen can update together with the changes of below data:  
 * * https://raw.githubusercontent.com/tikivn/android-home-test/v2/keywords.json  
 * * https://github.com/maxterjy/android-home-test/tree/master/online-data  
 * In hotkey features, if the keyword is more than one word, then display in two lines. These two lines should have minimum difference in length.  

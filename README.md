@@ -1,12 +1,11 @@
 # Android Home Test  
 
 ## Summary
-An Android application fetches and displays json data.  
-The debug APK can be downloaded at below link:  
-https://github.com/maxterjy/android-home-test/blob/master/apk/HomeTest_v1.apk  
+The application is created to fetch and display json data.  
+The apk can be find at [here](https://github.com/maxterjy/android-home-test/blob/master/apk/HomeTest_v1.apk)  
   
 Features
-* Home screen can be updated together the updates of data that is located on Github.
+* Home screen can be updated together the changes of data that is located on Github.
 
 ## Screenshot
  | 

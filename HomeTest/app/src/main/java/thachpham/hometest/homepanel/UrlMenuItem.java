@@ -1,10 +1,10 @@
-package thachpham.hometest.category;
+package thachpham.hometest.homepanel;
 
-public class CategoryItem {
+public class HomeMenuItem {
     String mTitle;
     String mImageUrl;
 
-    public CategoryItem(String title, String imageUrl) {
+    public HomeMenuItem(String title, String imageUrl) {
         mTitle = title;
         mImageUrl = imageUrl;
     }

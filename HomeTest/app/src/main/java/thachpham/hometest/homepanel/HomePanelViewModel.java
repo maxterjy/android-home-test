@@ -1,4 +1,4 @@
-package thachpham.hometest.category;
+package thachpham.hometest.homepanel;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -14,7 +14,6 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,12 +22,15 @@ import thachpham.hometest.util.DLog;
 import thachpham.hometest.MyApplication;
 import thachpham.hometest.util.TextFormatter;
 
-public class CategoryViewModel extends ViewModel {
-    private MutableLiveData<List<CategoryItem>> mCategories = null;
+public abstract class TextImageViewModel extends ViewModel {
 
-    public LiveData<List<CategoryItem>> getCategories() {
+    protected  abstract String getDataUrl();
+
+    private MutableLiveData<List<TextImageItem>> mCategories = null;
+
+    public LiveData<List<TextImageItem>> getCategories() {
         if (mCategories == null) {
-            mCategories = new MutableLiveData<List<CategoryItem>>();
+            mCategories = new MutableLiveData<List<TextImageItem>>();
 
             fetchCategories();
         }
@@ -37,10 +39,11 @@ public class CategoryViewModel extends ViewModel {
     }
 
     private void fetchCategories() {
-        final List<CategoryItem> list = new ArrayList<CategoryItem>();
+        final List<TextImageItem> list = new ArrayList<TextImageItem>();
 
         RequestQueue queue = Volley.newRequestQueue(MyApplication.getAppContext());
-        String url = "https://raw.githubusercontent.com/maxterjy/android-home-test/master/online-data/category.json";
+
+        String url = getDataUrl();
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -56,7 +59,7 @@ public class CategoryViewModel extends ViewModel {
 
                                 String formattedTitle = TextFormatter.getTwoLineFormat(title);
 
-                                list.add(new CategoryItem(formattedTitle, imageUrl));
+                                list.add(new TextImageItem(formattedTitle, imageUrl));
                             }
 
                         } catch (JSONException e) {

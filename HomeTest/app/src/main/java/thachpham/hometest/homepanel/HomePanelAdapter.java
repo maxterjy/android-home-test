@@ -1,7 +1,6 @@
-package thachpham.hometest.category;
+package thachpham.hometest.homepanel;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -12,13 +11,12 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import thachpham.hometest.databinding.ViewholderCategoryBinding;
-import thachpham.hometest.databinding.ViewholderHotkeyBinding;
-import thachpham.hometest.hotkey.HotkeyAdapter;
+import thachpham.hometest.util.DLog;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
-    List<CategoryItem> mItems;
+public class TextImageAdapter extends RecyclerView.Adapter<TextImageAdapter.CategoryViewHolder> {
+    List<TextImageItem> mItems;
 
-    public CategoryAdapter(List<CategoryItem> categoryItems) {
+    public TextImageAdapter(List<TextImageItem> categoryItems) {
         mItems = categoryItems;
     }
 
@@ -28,13 +26,16 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         ViewholderCategoryBinding binding = ViewholderCategoryBinding.inflate(inflater, parent, false);
 
-        CategoryAdapter.CategoryViewHolder holder = new CategoryAdapter.CategoryViewHolder(binding);
+        TextImageAdapter.CategoryViewHolder holder = new TextImageAdapter.CategoryViewHolder(binding);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         holder.mBinding.tvCategoryTitle.setText(mItems.get(position).getTitle());
+
+        DLog.print("imageUrl: " + mItems.get(position).getImageUrl());
+
         Glide.with(holder.itemView)
                 .load(mItems.get(position).getImageUrl())
                 .into(holder.mBinding.iconCategory);

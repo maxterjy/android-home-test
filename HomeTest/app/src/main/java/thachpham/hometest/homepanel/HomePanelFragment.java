@@ -1,10 +1,9 @@
-package thachpham.hometest.category;
+package thachpham.hometest.homepanel.category;
 
 
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
@@ -15,8 +14,10 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import thachpham.hometest.R;
 import thachpham.hometest.databinding.FragmentCategoryBinding;
+import thachpham.hometest.homepanel.HomePanelAdapter;
+import thachpham.hometest.homepanel.TitleUrlPair;
+import thachpham.hometest.homepanel.HomePanelViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,10 +25,10 @@ import thachpham.hometest.databinding.FragmentCategoryBinding;
 public class CategoryFragment extends Fragment {
 
     FragmentCategoryBinding mBinding;
-    CategoryViewModel mViewModel;
+    HomePanelViewModel mViewModel;
 
     public CategoryFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -42,10 +43,10 @@ public class CategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         mBinding = FragmentCategoryBinding.inflate(inflater, container, false);
 
-        mViewModel.getCategories().observe(this, new Observer<List<CategoryItem>>() {
+        mViewModel.getCategories().observe(this, new Observer<List<TitleUrlPair>>() {
             @Override
-            public void onChanged(List<CategoryItem> categoryItems) {
-                mBinding.recyclerviewCategory.setAdapter(new CategoryAdapter(categoryItems));
+            public void onChanged(List<TitleUrlPair> categoryItems) {
+                mBinding.recyclerviewCategory.setAdapter(new HomePanelAdapter(categoryItems));
             }
         });
 

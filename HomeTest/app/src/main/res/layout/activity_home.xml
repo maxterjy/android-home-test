@@ -14,8 +14,14 @@
         tools:context=".home.HomeActivity">
 
         <fragment
-            android:name="thachpham.hometest.category.CategoryFragment"
+            android:name="thachpham.hometest.homepanel.category.CategoryFragment"
             android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <fragment
+            android:name="thachpham.hometest.homepanel.utility.UtilityFragment"
+            android:id="@+id/utility"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

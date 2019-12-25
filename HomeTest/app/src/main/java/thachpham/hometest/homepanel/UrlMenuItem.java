@@ -1,10 +1,10 @@
 package thachpham.hometest.homepanel;
 
-public class HomeMenuItem {
+public class UrlMenuItem {
     String mTitle;
     String mImageUrl;
 
-    public HomeMenuItem(String title, String imageUrl) {
+    public UrlMenuItem(String title, String imageUrl) {
         mTitle = title;
         mImageUrl = imageUrl;
     }

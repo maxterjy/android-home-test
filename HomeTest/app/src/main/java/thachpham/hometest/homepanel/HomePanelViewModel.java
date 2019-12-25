@@ -22,15 +22,15 @@ import thachpham.hometest.util.DLog;
 import thachpham.hometest.MyApplication;
 import thachpham.hometest.util.TextFormatter;
 
-public abstract class TextImageViewModel extends ViewModel {
+public abstract class HomePanelViewModel extends ViewModel {
 
     protected  abstract String getDataUrl();
 
-    private MutableLiveData<List<TextImageItem>> mCategories = null;
+    private MutableLiveData<List<UrlMenuItem>> mCategories = null;
 
-    public LiveData<List<TextImageItem>> getCategories() {
+    public LiveData<List<UrlMenuItem>> getCategories() {
         if (mCategories == null) {
-            mCategories = new MutableLiveData<List<TextImageItem>>();
+            mCategories = new MutableLiveData<List<UrlMenuItem>>();
 
             fetchCategories();
         }
@@ -39,7 +39,7 @@ public abstract class TextImageViewModel extends ViewModel {
     }
 
     private void fetchCategories() {
-        final List<TextImageItem> list = new ArrayList<TextImageItem>();
+        final List<UrlMenuItem> list = new ArrayList<UrlMenuItem>();
 
         RequestQueue queue = Volley.newRequestQueue(MyApplication.getAppContext());
 
@@ -59,7 +59,7 @@ public abstract class TextImageViewModel extends ViewModel {
 
                                 String formattedTitle = TextFormatter.getTwoLineFormat(title);
 
-                                list.add(new TextImageItem(formattedTitle, imageUrl));
+                                list.add(new UrlMenuItem(formattedTitle, imageUrl));
                             }
 
                         } catch (JSONException e) {

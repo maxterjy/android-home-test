@@ -10,13 +10,13 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import thachpham.hometest.databinding.ViewholderCategoryBinding;
+import thachpham.hometest.databinding.ViewholderUrlmenuItemBinding;
 import thachpham.hometest.util.DLog;
 
-public class TextImageAdapter extends RecyclerView.Adapter<TextImageAdapter.CategoryViewHolder> {
-    List<TextImageItem> mItems;
+public class HomePanelAdapter extends RecyclerView.Adapter<HomePanelAdapter.CategoryViewHolder> {
+    List<UrlMenuItem> mItems;
 
-    public TextImageAdapter(List<TextImageItem> categoryItems) {
+    public HomePanelAdapter(List<UrlMenuItem> categoryItems) {
         mItems = categoryItems;
     }
 
@@ -24,9 +24,9 @@ public class TextImageAdapter extends RecyclerView.Adapter<TextImageAdapter.Cate
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        ViewholderCategoryBinding binding = ViewholderCategoryBinding.inflate(inflater, parent, false);
+        ViewholderUrlmenuItemBinding binding = ViewholderUrlmenuItemBinding.inflate(inflater, parent, false);
 
-        TextImageAdapter.CategoryViewHolder holder = new TextImageAdapter.CategoryViewHolder(binding);
+        HomePanelAdapter.CategoryViewHolder holder = new HomePanelAdapter.CategoryViewHolder(binding);
         return holder;
     }
 
@@ -47,12 +47,16 @@ public class TextImageAdapter extends RecyclerView.Adapter<TextImageAdapter.Cate
     }
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder {
-        ViewholderCategoryBinding mBinding;
+        ViewholderUrlmenuItemBinding mBinding;
 
-        public CategoryViewHolder(@NonNull ViewholderCategoryBinding binding) {
+        public CategoryViewHolder(@NonNull ViewholderUrlmenuItemBinding binding) {
             super(binding.getRoot());
 
             mBinding = binding;
         }
+    }
+
+    public void setItemList(List<UrlMenuItem> itemList) {
+        mItems = itemList;
     }
 }

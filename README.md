@@ -16,7 +16,7 @@ I have built an Android application, that:
 
 You can find the apk at [here](https://github.com/maxterjy/android-home-test/blob/master/apk/HomeTest_v1.apk).  
 There are still errors and need-to-improve points int my application.  
-But I hope the company likes it.  
+But I hope the company will like it.  
 
 ## Development
 * Volley library is used to perform HTTP GET request and receive response.  

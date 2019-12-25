@@ -24,6 +24,9 @@ But I hope the company will like it.
 * Fragment observes the data through LiveData.  
 * Data binding is used to reduce findViewById() calls.  
 
+**Tested devices:**
+* Nokia 3 (Android version: 8.1.0, screen size: 720x1280)
+
 ## Screenshot
  | 
 <img src="https://github.com/maxterjy/android-home-test/blob/master/screenshot/portrail_01.png" width="256" /> | 

@@ -14,6 +14,12 @@
         tools:context=".home.HomeActivity">
 
         <fragment
+            android:name="thachpham.hometest.homepanel.shortcut.ShortcutFragment"
+            android:id="@+id/shortcut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <fragment
             android:name="thachpham.hometest.homepanel.category.CategoryFragment"
             android:id="@+id/category"
             android:layout_width="match_parent"
@@ -24,6 +30,10 @@
             android:id="@+id/utility"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
+
+        <include layout="@layout/promotion_panel"/>
+        <include layout="@layout/separate_line"/>
 
         <fragment
             android:name="thachpham.hometest.hotkey.HotkeyFragment"

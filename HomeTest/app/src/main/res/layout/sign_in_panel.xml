@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_signin"
+        android:text="Đăng nhập để trải nghiệm tốt nhất"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btn_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/white"
+        android:text="ĐĂNG KÝ"
+        android:layout_below="@id/tv_signin"
+        android:elevation="0dp"
+        android:background="@drawable/round_rectangle_blue"
+        android:layout_marginLeft="12dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_signin"
+        android:layout_marginTop="8dp"
+        android:text="ĐĂNG NHẬP"
+        android:textColor="@android:color/white"
+        android:layout_toRightOf="@id/btn_signup"
+        android:layout_marginLeft="24dp"
+        android:elevation="0dp"
+        android:background="@drawable/round_rectangle_red"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <ImageView
+        android:src="@drawable/mascot"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

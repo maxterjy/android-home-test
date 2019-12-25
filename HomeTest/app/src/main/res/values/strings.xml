@@ -3,6 +3,7 @@
 
     <string name="title_hotkey">Từ khóa hot</string>
     <string name="title_category">Danh mục sản phẩm</string>
+    <string name="title_utility">Danh mục sản phẩm</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

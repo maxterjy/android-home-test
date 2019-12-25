@@ -1,0 +1,24 @@
+
+[
+  {
+    "title": "Danh Mục",
+    "image": "https://raw.githubusercontent.com/maxterjy/android-home-test/master/online-data/image/ic_category.png"   
+  },
+  {
+    "title": "TikiLIVE",
+    "image": "https://raw.githubusercontent.com/maxterjy/android-home-test/master/online-data/image/live_all.png"   
+  },
+  {
+    "title": "Tiki Deal",
+    "image": "https://raw.githubusercontent.com/maxterjy/android-home-test/master/online-data/image/ic_hotdeal.png" 
+  },
+  {
+    "title": "Thẻ Quà",
+    "image": "https://raw.githubusercontent.com/maxterjy/android-home-test/master/online-data/image/ic_coupon_quicklink.png"
+  },
+  {
+    "title": "TikiNow",
+    "image": "https://raw.githubusercontent.com/maxterjy/android-home-test/master/online-data/image/ic_menu_tiki_now.png"
+  }
+]
+

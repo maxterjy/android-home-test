@@ -7,15 +7,14 @@ And below is my result.
   
 I have built an Android application, that:  
 * Fetch and display json data on the [link](https://raw.githubusercontent.com/tikivn/android-home-test/v2/keywords.json) that you give.  
-* Home screen can update together with the changes of below data:  
+* Home screen can update together the changes of below data:  
 * * https://raw.githubusercontent.com/tikivn/android-home-test/v2/keywords.json  
 * * https://github.com/maxterjy/android-home-test/tree/master/online-data  
 * In hotkey features, if the keyword is more than one word, then display in two lines. These two lines should have minimum difference in length.  
 * Besides, I research TIKI application and modify my UI as the design of TIKI. That really help my application have a better look.  
-* During doing the exam, I have used some icons of TIKI. So sorry, because I used without asking you.  
 
 You can find the apk at [here](https://github.com/maxterjy/android-home-test/blob/master/apk/HomeTest_v1.apk).  
-There are still errors and need-to-improve points int my application.  
+There are still errors and need-to-improve points in my application.  
 But I hope the company will like it.  
 
 ## Development
